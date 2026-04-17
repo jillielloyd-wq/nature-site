@@ -1,86 +1,101 @@
+/* Import clean nature font */
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 :root {
-    --top-mist: #d8f3dc;    
-    --mid-canopy: #95d5b2;  
-    --deep-forest: #1b4332; 
+    --dark-forest: #1b4332;
+    --mid-leaf: #2d6a4f;
+    --light-moss: #52b788;
 }
 
 body {
-    background: linear-gradient(180deg, var(--top-mist) 0%, var(--mid-canopy) 40%, var(--deep-forest) 100%);
+    /* The Green Ombre Background */
+    background: linear-gradient(180deg, var(--dark-forest) 0%, var(--mid-leaf) 50%, var(--light-moss) 100%);
     background-attachment: fixed;
     margin: 0;
+    padding: 0;
     font-family: 'Questrial', sans-serif;
+    color: white;
     min-height: 100vh;
-    color: #333;
 }
 
-/* NAVBAR */
+/* THE OLD NAV BAR (Spaced along the top) */
 .navbar {
-    background-color: rgba(27, 67, 50, 0.9);
-    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 1.2rem 2.5rem;
 }
 
-.logo { color: white; font-weight: bold; font-size: 1.4rem; }
+.logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
 
-#navMenu {
-    display: none;
-    list-style: none;
-    gap: 20px;
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 30px; 
     margin: 0;
-    padding: 0;
 }
 
-#navMenu.show { display: flex; }
-
-.nav-links a { color: white; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
-
-/* BUTTONS */
-button, .menu-toggle {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 50px;
+.nav-links a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
     text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-/* HERO */
+.nav-links a:hover, .nav-links a.active {
+    color: #b7e4c7;
+}
+
+/* HERO SECTION */
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    color: white;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80');
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
 }
 
-/* NATURE CARDS */
-.container { max-width: 1000px; margin: auto; padding: 40px; }
+/* BUTTONS (White box, black text, rounded) */
+.pill-button, .info-card h3 {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
 
-.card-grid { display: flex; gap: 20px; }
+/* THE NATURE PICTURE BUTTONS (Cards) */
+.container { 
+    max-width: 1100px; 
+    margin: auto; 
+    padding: 50px 20px; 
+}
+
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+.card-grid { display: flex; gap: 25px; }
 
 .info-card {
     flex: 1;
-    height: 200px;
+    height: 250px; /* Longer boxes as requested */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     text-decoration: none;
     position: relative;
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    transition: 0.3s;
+    transition: 0.4s ease;
+    border: 2px solid rgba(255,255,255,0.1);
 }
 
 .info-card::before {
@@ -89,12 +104,21 @@ button, .menu-toggle {
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    transition: 0.3s;
 }
 
-.info-card h3 { color: white; position: relative; z-index: 2; text-transform: uppercase; }
-
-.card-about { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=500&q=60'); }
-.card-danger { background-image: url('https://images.unsplash.com/photo-1520113412646-04fc68c0bc21?auto=format&fit=crop&w=500&q=60'); }
-.card-help { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=60'); }
+.info-card h3 { 
+    position: relative; 
+    z-index: 2; 
+    background-color: white; 
+    color: black;
+    padding: 10px 20px;
+}
 
 .info-card:hover { transform: translateY(-10px); }
+.info-card:hover::before { background: rgba(0,0,0,0.2); }
+
+/* Card Backgrounds */
+.card-about { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=60'); }
+.card-danger { background-image: url('https://images.unsplash.com/photo-1520113412646-04fc68c0bc21?auto=format&fit=crop&w=600&q=60'); }
+.card-help { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=60'); }
