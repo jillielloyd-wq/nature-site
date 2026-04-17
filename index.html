@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Nature Guide</title>
+    <title>Nature Guide | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">🌿 Nature Guide</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+        <div class="logo">🌿 NATURE GUIDE</div>
+        <button id="toggleBtn" class="menu-toggle">Show Menu ☰</button>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Nature</a></li>
             <li><a href="dangerous.html">Dangerous</a></li>
+            <li><a href="help.html">Preserve</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>The Ultimate Nature Guide</h1>
-        <p>Explore the wonders—and the dangers—of the wild.</p>
+        <h1>THE ULTIMATE NATURE GUIDE</h1>
+        <p>Explore the beauty and the intensity of the wild.</p>
         <button id="alertBtn">Safety Warning! ⚠️</button>
     </header>
 
     <main class="container">
-        <div class="card-grid">
-            <a href="about.html" class="info-card">
+        <h2>Choose Your Path</h2>
+        <div class="card-grid" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+            <a href="about.html" style="background: white; color: black; padding: 20px; border-radius: 20px; text-decoration: none; flex: 1; text-align: center;">
                 <h3>About Nature</h3>
-                <p>Learn about ecosystems and why nature is beautiful.</p>
             </a>
-            <a href="dangerous.html" class="info-card danger">
+            <a href="dangerous.html" style="background: white; color: black; padding: 20px; border-radius: 20px; text-decoration: none; flex: 1; text-align: center;">
                 <h3>Dangerous Animals</h3>
-                <p>Beware! Learn about the world's most lethal creatures.</p>
             </a>
         </div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
