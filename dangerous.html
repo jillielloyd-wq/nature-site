@@ -12,25 +12,42 @@
         <ul class="nav-links" id="navMenu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Nature</a></li>
-            <li><a href="dangerous.html">Dangerous</a></li>
+            <li><a href="dangerous.html" class="active">Dangerous</a></li>
             <li><a href="help.html">Preserve</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <h1>⚠️ Lethal Wildlife</h1>
-        <p>Respect is the first rule of the wilderness.</p>
-        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px;">
-            <h3>The Danger List:</h3>
-            <ol>
-                <li>Box Jellyfish</li>
-                <li>King Cobra</li>
-                <li>Saltwater Crocodile</li>
+        <p>Respect is the first rule of the wilderness. Knowing the dangers is vital.</p>
+        
+        <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1600&q=80" alt="Lethal Green Snake" class="img-snake">
+
+        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; margin-top:20px;">
+            <h3 class="on-dark">The Lethal List (Expanded):</h3>
+            <ol class="on-dark">
+                <li><strong>Inland Taipan (Snake):</strong> Most toxic venom of any snake. One bite could kill 100 men.</li>
+                <li><strong>Sydney Funnel-Web Spider:</strong> One of the few spiders that can prove fatal to humans.</li>
+                <li><strong>Grizzly Bear:</strong> Not aggressive, but extremely protective. Attacks are powerful.</li>
+                <li><strong>Box Jellyfish:</strong> The 'invisible killer' of the ocean. Stings are instant agony and cardiotoxic.</li>
             </ol>
         </div>
-        <div style="text-align: center; margin-top: 30px;">
-            <button onclick="checkSurvival()">Survival Tip</button>
+
+        <div id="quizSection" style="text-align: center; margin-top: 40px; border-top: 1px solid #bc4749; padding-top: 20px;">
+            <p>Can you survive a bear encounter?</p>
+            <button onclick="checkSurvival()">Click for Grizzly survival tip</button>
             <p id="survivalMessage" style="margin-top: 20px;"></p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="snakeToggle">Show Lethal Snake Facts</button>
+            <div id="snakeInfo" style="display:none; text-align:left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                 <ul class="on-dark">
+                    <li>The Black Mamba is actually olive-grey, but its mouth is ink-black.</li>
+                    <li>The Inland Taipan is found in a tiny, specific part of Australia.</li>
+                    <li>Rattlesnake venom is usually hemotoxic (attacks tissue) but can sometimes be neurotoxic.</li>
+                 </ul>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
