@@ -1,124 +1,22 @@
-/* Import clean nature font */
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-
-:root {
-    --dark-forest: #1b4332;
-    --mid-leaf: #2d6a4f;
-    --light-moss: #52b788;
+/* --- SCALED IMAGES WITH ROUNDED BORDERS --- */
+.image-container {
+    width: 100%;
+    max-width: 800px; /* Limits the width so it's not too huge */
+    margin: 20px auto; /* Centers the image box */
+    overflow: hidden; /* Keeps the image inside the rounded corners */
+    border-radius: 30px; /* The rounded border you requested */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle frame */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Adds depth */
 }
 
-body {
-    /* The Green Ombre Background */
-    background: linear-gradient(180deg, var(--dark-forest) 0%, var(--mid-leaf) 50%, var(--light-moss) 100%);
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    font-family: 'Questrial', sans-serif;
-    color: white;
-    min-height: 100vh;
+.image-container img {
+    width: 100%; /* Makes the image fit the box exactly */
+    height: auto; /* Keeps the photo from looking squished */
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-/* THE OLD NAV BAR (Spaced along the top) */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 2.5rem;
+/* Optional: Small zoom effect when you hover over the image */
+.image-container:hover img {
+    transform: scale(1.05);
 }
-
-.logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
-
-.nav-links { 
-    list-style: none; 
-    display: flex; 
-    gap: 30px; 
-    margin: 0;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #b7e4c7;
-}
-
-/* HERO SECTION */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-}
-
-/* BUTTONS (White box, black text, rounded) */
-.pill-button, .info-card h3 {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-}
-
-/* THE NATURE PICTURE BUTTONS (Cards) */
-.container { 
-    max-width: 1100px; 
-    margin: auto; 
-    padding: 50px 20px; 
-}
-
-.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-
-.card-grid { display: flex; gap: 25px; }
-
-.info-card {
-    flex: 1;
-    height: 250px; /* Longer boxes as requested */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    transition: 0.4s ease;
-    border: 2px solid rgba(255,255,255,0.1);
-}
-
-.info-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-    transition: 0.3s;
-}
-
-.info-card h3 { 
-    position: relative; 
-    z-index: 2; 
-    background-color: white; 
-    color: black;
-    padding: 10px 20px;
-}
-
-.info-card:hover { transform: translateY(-10px); }
-.info-card:hover::before { background: rgba(0,0,0,0.2); }
-
-/* Card Backgrounds */
-.card-about { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=60'); }
-.card-danger { background-image: url('https://images.unsplash.com/photo-1520113412646-04fc68c0bc21?auto=format&fit=crop&w=600&q=60'); }
-.card-help { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=60'); }
