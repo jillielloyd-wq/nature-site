@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Nature | Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">🌿 NATURE GUIDE</div>
-        <ul class="nav-links">
+        <button id="menuBtn" class="menu-toggle">Show Menu ☰</button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About Nature</a></li>
             <li><a href="dangerous.html">Dangerous</a></li>
@@ -18,19 +20,14 @@
 
     <main class="container">
         <h1>Understand Our Planet</h1>
-        
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=1200&q=80" alt="Nature Flowers">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=1200&q=80" alt="Flowers">
         </div>
-
         <div class="content-box">
-            <p>Nature is a complex system of living and non-living things working together. From the rainforests to the deep oceans, every ecosystem plays a vital role in our survival.</p>
-            <ul>
-                <li>Rainforests produce the oxygen we breathe.</li>
-                <li>Oceans regulate our global climate.</li>
-                <li>Bees and pollinators ensure our food supply.</li>
-            </ul>
+            <p>Nature is a balanced system. Forests provide oxygen, while oceans regulate our global temperature. From the smallest fungi to the largest whales, everything is connected.</p>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
