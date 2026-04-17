@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dangerous Animals | Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangerous Animals | Nature Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">🌿 NATURE GUIDE</div>
-        <button id="toggleBtn" class="menu-toggle">Show Menu ☰</button>
-        <ul class="nav-links" id="navMenu">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Nature</a></li>
             <li><a href="dangerous.html" class="active">Dangerous</a></li>
@@ -19,37 +20,28 @@
 
     <main class="container">
         <h1>⚠️ Lethal Wildlife</h1>
-        <p>Respect is the first rule of the wilderness. Knowing the dangers is vital.</p>
-        
-        <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1600&q=80" alt="Lethal Green Snake" class="img-snake">
+        <p>Some of nature's most beautiful creatures are also its most deadly. Respect is the first rule of the wild.</p>
 
-        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; margin-top:20px;">
-            <h3 class="on-dark">The Lethal List (Expanded):</h3>
-            <ol class="on-dark">
-                <li><strong>Inland Taipan (Snake):</strong> Most toxic venom of any snake. One bite could kill 100 men.</li>
-                <li><strong>Sydney Funnel-Web Spider:</strong> One of the few spiders that can prove fatal to humans.</li>
-                <li><strong>Grizzly Bear:</strong> Not aggressive, but extremely protective. Attacks are powerful.</li>
-                <li><strong>Box Jellyfish:</strong> The 'invisible killer' of the ocean. Stings are instant agony and cardiotoxic.</li>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1200&q=80" alt="Dangerous Snake">
+        </div>
+
+        <div class="content-box dark-tint">
+            <h3>Top Predators & Toxic Threats:</h3>
+            <ol>
+                <li><strong>The Inland Taipan:</strong> The most venomous snake in the world. A single bite contains enough toxin to kill 100 people.</li>
+                <li><strong>Box Jellyfish:</strong> Virtually invisible in the water, their stings can cause heart failure in minutes.</li>
+                <li><strong>The Grizzly Bear:</strong> While they usually avoid humans, they are incredibly powerful and protective of their territory.</li>
             </ol>
         </div>
 
-        <div id="quizSection" style="text-align: center; margin-top: 40px; border-top: 1px solid #bc4749; padding-top: 20px;">
-            <p>Can you survive a bear encounter?</p>
-            <button onclick="checkSurvival()">Click for Grizzly survival tip</button>
-            <p id="survivalMessage" style="margin-top: 20px;"></p>
-        </div>
-        
-        <div style="text-align: center; margin-top: 20px;">
-            <button id="snakeToggle">Show Lethal Snake Facts</button>
-            <div id="snakeInfo" style="display:none; text-align:left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                 <ul class="on-dark">
-                    <li>The Black Mamba is actually olive-grey, but its mouth is ink-black.</li>
-                    <li>The Inland Taipan is found in a tiny, specific part of Australia.</li>
-                    <li>Rattlesnake venom is usually hemotoxic (attacks tissue) but can sometimes be neurotoxic.</li>
-                 </ul>
-            </div>
+        <div class="interactive-section">
+            <p>Think you know how to stay safe?</p>
+            <button onclick="checkSurvival()" class="pill-button">Get Survival Tip</button>
+            <p id="survivalMessage" style="margin-top: 20px; font-weight: bold;"></p>
         </div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
