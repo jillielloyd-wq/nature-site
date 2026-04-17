@@ -1,168 +1,65 @@
-/* --- Visual Theme and Typography --- */
-@import url('https://fonts.googleapis.com/css2?family=Calluna+Sans:wght@400;700&display=swap'); /* Best available match */
-
-:root {
-    /* Nature Palette - Lighter Top, Deepening Down */
-    --top-mist: #d8f3dc;    /* Soft, misty pale green */
-    --mid-canopy: #95d5b2;  /* Lighter leaf green */
-    --deep-forest: #1b4332; /* Deep moss green */
-    
-    --text-on-dark: #fff;
-    --text-on-light: #333;
-    --danger-red: #bc4749;
-    --pledge-green: #2d6a4f;
-}
-
-body {
-    /* Updated, softer gradient starting from top */
-    background: linear-gradient(180deg, var(--top-mist) 0%, var(--mid-canopy) 40%, var(--deep-forest) 100%);
-    background-attachment: fixed;
-    margin: 0;
-    color: var(--text-on-light); /* Default text dark for the light top */
-    font-family: 'Calluna Sans', sans-serif;
-    min-height: 100vh;
-    line-height: 1.6;
-}
-
-h1, h2, h3 { 
-    color: var(--deep-forest);
-    font-weight: 700;
-}
-
-/* Base class for white text on dark backgrounds */
-.on-dark {
-    color: var(--text-on-dark) !important;
-}
-
-/* --- NAVIGATION BAR --- */
-.navbar {
-    background-color: rgba(27, 67, 50, 0.85); /* Deep Forest Translucent */
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; /* Keeps it visible as you scroll */
-    top: 0;
-    z-index: 1000;
-}
-
-.logo { 
-    color: white; 
-    font-weight: 700; 
-    font-size: 1.4rem; 
-    letter-spacing: 1px; 
-}
-
-/* Nav Menu (Hidden/Show Logic) */
-#navMenu {
-    display: none; /* Hidden on load */
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    position: absolute; /* Needed for overlay effect */
-    top: 60px; /* Positions it below the toggle */
-    right: 20px;
-    background-color: rgba(0,0,0,0.85);
-    padding: 20px;
-    border-radius: 10px;
-    flex-direction: column;
-}
-
-#navMenu.show {
-    display: flex; /* Shown when toggled */
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav-links a.active {
-    font-weight: 700;
-    border-bottom: 2px solid white;
-}
-
-/* --- BUTTONS & TOGGLE (Pill shape, White Box, Black Text) --- */
-button, .menu-toggle {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-family: 'Calluna Sans', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
-
-button:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
-}
-
-/* --- HOME PAGE HERO --- */
-.hero {
-    color: var(--text-on-dark);
-    text-align: center;
-    padding: 60px 20px;
-    /* Soft nature background overlay */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    margin-bottom: 30px;
-}
-
-.hero h1 { color: white; }
-
-/* --- CONTAINERS & LAYOUT --- */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-    /* Frosted glass effect */
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-}
-
-/* Wider Cards on index.html */
+/* --- WIDER CARDS WITH NATURE BACKGROUNDS --- */
 .card-grid {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     margin-top: 30px;
 }
 
 .info-card {
     flex: 1;
-    background: rgba(255,255,255,0.8);
-    color: var(--text-on-light);
-    padding: 25px;
+    min-height: 150px; /* Makes them longer/taller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     border-radius: 20px;
     text-decoration: none;
     text-align: center;
+    transition: 0.4s;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Dark overlay so text is easy to read */
+.info-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Subtle shadow */
     transition: 0.3s;
-    border-bottom: 5px solid var(--pledge-green);
+    z-index: 1;
+}
+
+.info-card h3 {
+    color: white !important;
+    position: relative;
+    z-index: 2; /* Keeps text above the image */
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Specific Backgrounds for each card */
+.card-about {
+    background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=500&q=60');
+}
+
+.card-danger {
+    background-image: url('https://images.unsplash.com/photo-1520113412646-04fc68c0bc21?auto=format&fit=crop&w=500&q=60');
+}
+
+.card-help {
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=60');
 }
 
 .info-card:hover {
-    transform: scale(1.03);
+    transform: translateY(-10px);
 }
 
-.info-card.danger {
-    border-bottom: 5px solid var(--danger-red);
-}
-
-/* General image styling */
-.img-nature, .img-snake {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin: 20px 0;
+.info-card:hover::before {
+    background: rgba(0, 0, 0, 0.2); /* Brightens up on hover */
 }
