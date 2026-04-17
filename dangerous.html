@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangerous Animals | Nature Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🌿 Nature Guide</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Nature</a></li>
+            <li><a href="dangerous.html" class="active">Dangerous</a></li>
+        </ul>
+    </nav>
 
+    <main class="container">
+        <h1 style="color: #bc4749;">⚠️ Dangerous Animals</h1>
+        <p>Some of nature's most beautiful creatures are also its most deadly.</p>
+        
+        <h3>The Lethal List:</h3>
+        <ol>
+            <li><strong>Box Jellyfish:</strong> The most venomous marine animal.</li>
+            <li><strong>King Cobra:</strong> Its venom can kill an elephant in one bite.</li>
+            <li><strong>Saltwater Crocodile:</strong> The strongest bite force in the world.</li>
+        </ol>
+        
+        <div id="quizSection" style="background: #fff; padding: 20px; border-radius: 15px; margin-top: 30px;">
+            <p>Can you survive a bear encounter?</p>
+            <button onclick="checkSurvival()">Get Survival Tip</button>
+            <p id="survivalMessage" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
