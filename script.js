@@ -1,21 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // 1. SELECT THE ELEMENTS
-    const toggleBtn = document.getElementById("menuBtn");
+window.onload = function() {
+    const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
 
-    // 2. THE CLICK FUNCTION
-    if (toggleBtn && navLinks) {
-        toggleBtn.onclick = function() {
-            // This toggles the 'active-menu' class from the CSS
+    if (menuBtn && navLinks) {
+        menuBtn.onclick = function() {
+            // Toggles the visibility class
             navLinks.classList.toggle("active-menu");
-
-            // Change the button text based on state
+            
+            // Updates the text inside the button
             if (navLinks.classList.contains("active-menu")) {
-                toggleBtn.innerText = "Hide Menu ✕";
+                menuBtn.innerText = "Hide Menu ✕";
             } else {
-                toggleBtn.innerText = "Show Menu ☰";
+                menuBtn.innerText = "Show Menu ☰";
             }
         };
     }
-});
+};
