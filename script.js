@@ -1,6 +1,6 @@
 window.onload = function() {
     
-    // --- NAV MENU TOGGLE ---
+    // --- NAV MENU TOGGLE (Fixed Logic) ---
     const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
 
@@ -25,10 +25,10 @@ window.onload = function() {
     const fallingContainer = document.getElementById('falling-effects');
 
     if (currentPath === 'about.html') {
-        // --- ABOUT NATURE: Faint Plant Rain 🌱 ---
-        addFallingListener(['🌱', '🌿', '🌴', '🌳'], 0.3); // Opacity set to faint
+        // --- ABOUT NATURE: Faint Plant Rain 🌱 (Op. 0.3) ---
+        addFallingListener(['🌱', '🌿', '🌴', '🌳'], 0.3); // Set to faint opacity
     } else if (currentPath === 'dangerous.html') {
-        // --- DANGEROUS: Hazard Rain ⚠️ ---
+        // --- DANGEROUS: Hazard Rain ⚠️ (Op. 0.6) ---
         addFallingListener(['⚠️', '🚧', '🐍', '💀'], 0.6); // Slightly more visible
     }
 
@@ -60,7 +60,7 @@ window.onload = function() {
         emojiElement.style.left = Math.random() * 100 + 'vw';
         emojiElement.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 seconds
         emojiElement.style.animationDelay = Math.random() * 0.5 + 's';
-        emojiElement.style.opacity = opacity; // Use the opacity provided (e.g., 0.3)
+        emojiElement.style.opacity = opacity; // Faint opacity
         emojiElement.style.fontSize = Math.random() * 1 + 1 + 'rem'; // Random size
 
         fallingContainer.appendChild(emojiElement);
