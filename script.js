@@ -1,12 +1,15 @@
 window.onload = function() {
     
-    // --- NAV MENU TOGGLE (Stay the Same) ---
+    // --- NAV MENU TOGGLE ---
     const menuBtn = document.getElementById("menuBtn");
     const navLinks = document.getElementById("navLinks");
 
     if (menuBtn && navLinks) {
         menuBtn.onclick = function() {
+            // Toggles the 'active-menu' class from the CSS
             navLinks.classList.toggle("active-menu");
+
+            // Changes button text based on state
             if (navLinks.classList.contains("active-menu")) {
                 menuBtn.innerText = "Hide Menu ✕";
             } else {
@@ -22,15 +25,15 @@ window.onload = function() {
     const fallingContainer = document.getElementById('falling-effects');
 
     if (currentPath === 'about.html') {
-        // --- ABOUT NATURE PAGE: Leaves and Flowers ---
-        addFallingListener(['🍃', '🍂', '🌸', '🌼']);
+        // --- ABOUT NATURE: Faint Plant Rain 🌱 ---
+        addFallingListener(['🌱', '🌿', '🌴', '🌳'], 0.3); // Opacity set to faint
     } else if (currentPath === 'dangerous.html') {
-        // --- DANGEROUS PAGE: Hazard and Snakes ---
-        addFallingListener(['⚠️', '🚧', '🐍', '💀']);
+        // --- DANGEROUS: Hazard Rain ⚠️ ---
+        addFallingListener(['⚠️', '🚧', '🐍', '💀'], 0.6); // Slightly more visible
     }
 
     // 2. The function that adds the listener to every photo item
-    function addFallingListener(emojiArray) {
+    function addFallingListener(emojiArray, opacity) {
         // Select all framed photos on the page
         const photos = document.querySelectorAll('.photo-item');
         
@@ -38,14 +41,14 @@ window.onload = function() {
             photo.onclick = function() {
                 // Create multiple emojis
                 for (let i = 0; i < 20; i++) {
-                    createFallingEmoji(emojiArray);
+                    createFallingEmoji(emojiArray, opacity);
                 }
             };
         });
     }
 
     // 3. The function that makes a single emoji fall
-    function createFallingEmoji(emojiArray) {
+    function createFallingEmoji(emojiArray, opacity) {
         const emojiElement = document.createElement('div');
         emojiElement.classList.add('falling-emoji');
         
@@ -57,7 +60,8 @@ window.onload = function() {
         emojiElement.style.left = Math.random() * 100 + 'vw';
         emojiElement.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 seconds
         emojiElement.style.animationDelay = Math.random() * 0.5 + 's';
-        emojiElement.style.opacity = Math.random() * 0.5 + 0.5; // Muted visibility
+        emojiElement.style.opacity = opacity; // Use the opacity provided (e.g., 0.3)
+        emojiElement.style.fontSize = Math.random() * 1 + 1 + 'rem'; // Random size
 
         fallingContainer.appendChild(emojiElement);
 
