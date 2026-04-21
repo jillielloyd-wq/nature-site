@@ -1,16 +1,17 @@
+/* Importing the friendly, rounded Varela font */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'); 
 
 :root {
-    /* Earthy Muted Sage/Green Palette from your image */
-    --base-sage: #a8c2ad;   /* Light sage */
-    --mid-sage: #84a589;    /* Muted moss */
-    --deep-sage: #628468;   /* Forest moss */
+    /* Muted, Earthy Gray-Green Palette from your reference image */
+    --base-sage: #a8c2ad;   /* The light shade */
+    --mid-sage: #84a589;    /* The middle moss */
+    --deep-sage: #628468;   /* The darker moss */
     --text-color: #2c3e50;
     --dark-green: #1b4332;
 }
 
 body {
-    /* New Earthy Ombre Background on ALL PAGES */
+    /* The New Earthy Ombre Background on ALL PAGES */
     background: linear-gradient(180deg, var(--base-sage) 0%, var(--mid-sage) 50%, var(--deep-sage) 100%);
     background-attachment: fixed;
     margin: 0;
@@ -19,9 +20,9 @@ body {
     min-height: 100vh;
 }
 
-/* --- THE NAVIGATION BAR (Consistent) --- */
+/* --- THE NAVIGATION BAR (Consistent and Fixed Logic) --- */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); /* Light glass */
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -34,10 +35,11 @@ body {
 
 .logo { font-weight: bold; font-size: 1.5rem; color: var(--dark-green); }
 
+/* The Menu */
 .nav-links { 
     list-style: none; 
-    display: none; 
-    gap: 15px; 
+    display: none; /* JavaScript will toggle this */
+    gap: 20px; 
     margin: 0;
     padding: 20px;
     background: white; 
@@ -49,6 +51,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+/* Class added by JS to open the menu */
 .nav-links.active-menu { display: flex !important; }
 
 .nav-links a {
@@ -60,7 +63,7 @@ body {
 }
 
 .menu-toggle {
-    background-color: var(--dark-green);
+    background-color: var(--dark-green); /* Dark green button */
     color: white;
     border: none;
     padding: 10px 25px;
@@ -70,12 +73,39 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
-/* --- SHARED PAGE CONTAINERS --- */
+/* --- SHARED CONTENT CONTAINERS --- */
 .container {
     max-width: 900px;
     margin: 50px auto;
     padding: 20px;
     text-align: center;
+}
+
+/* --- THE UNIFORM BUBBLY PHOTO FRAMES --- */
+.page-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+
+.photo-item {
+    width: 280px; /* Cozy, small size */
+    height: 180px;
+    overflow: hidden;
+    border-radius: 40px; /* Bubbly, extra rounded as requested */
+    border: 8px solid white; /* Thick white frame as requested */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background-color: white; /* Clean look */
+    cursor: pointer;
+}
+
+/* FIXES SCALING (No Squishing!) */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents stretching */
 }
 
 /* --- CONTENT BOXES (Consistent) --- */
@@ -87,33 +117,6 @@ body {
     text-align: left;
     margin-top: 30px;
     line-height: 1.7;
-}
-
-/* --- NEW 2-3 PHOTO GALLERY LAYOUT --- */
-.page-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px auto;
-    flex-wrap: wrap;
-}
-
-/* Uniform, Bubbly Photo Container */
-.photo-item {
-    width: 280px; /* Small, cozy size */
-    height: 180px;
-    overflow: hidden;
-    border-radius: 40px; /* Bubbly, extra rounded edges */
-    border: 8px solid white; /* Thick white border as requested */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    background-color: white; /* For clean look */
-    cursor: pointer;
-}
-
-.photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Prevents squishing! */
 }
 
 /* --- FALLING EFFECTS INTERACTION --- */
