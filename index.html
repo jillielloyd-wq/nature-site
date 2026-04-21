@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <title>Nature Guide | Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Special styles JUST for the homepage layout */
+        .framed-title {
+            display: inline-flex;
+            align-items: center;
+            border: 3px solid #1b4332; /* Dark green frame */
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            margin-top: 50px;
+        }
+
+        .cta-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #1b4332;
+            text-decoration: underline;
+        }
+
+        /* Making the About button giant */
+        .card-about { flex: 3 !important; } /* Sits in the middle, huge */
+        .card-grid { align-items: stretch; }
+        
+        /* New AI images for Danger and Preserve */
+        .card-danger { background-image: url('https://image.pollinations.ai/prompt/ai%20illustration%20of%20a%20roaring%20jaguar%20in%20jungl') !important; }
+        .card-help { background-image: url('https://image.pollinations.ai/prompt/ai%20illustration%20of%20a%20volunteer%20picking%20up%20trash%20') !important; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -16,13 +44,25 @@
             <li><a href="help.html">Preserve</a></li>
         </ul>
     </nav>
+
     <main class="container">
-        <h1 style="font-size: 3rem; margin-top: 60px;">The Ultimate Nature Guide</h1>
-        <p>Explore the wonders, the dangers, and the solutions for our incredible world.</p>
+        <div class="framed-title">
+            <h1 style="margin: 0;">The Ultimate Nature Guide 🌱</h1>
+        </div>
+        <p style="font-size: 1.1rem; margin-top: 20px;">Explore the interconnected systems, the thrilling dangers, and the solutions for our planet.</p>
+        
         <div class="card-grid">
-            <a href="about.html" class="info-card card-about"><h3>About Nature</h3></a>
-            <a href="dangerous.html" class="info-card card-danger"><h3>Dangerous</h3></a>
-            <a href="help.html" class="info-card card-help"><h3>Preserve</h3></a>
+            <a href="dangerous.html" class="info-card card-danger">
+                <div><h3>Dangerous</h3> <span class="cta-text">Click here for Dangerous →</span></div>
+            </a>
+            
+            <a href="about.html" class="info-card card-about">
+                <div style="text-align: center;"><h3>About Nature</h3><p style="margin:0; font-size: 1.2rem;">Understanding Our Interconnected World 🌱</p></div>
+            </a>
+            
+            <a href="help.html" class="info-card card-help">
+                <div><h3>Preserve</h3> <span class="cta-text">Click here for Preserve →</span></div>
+            </a>
         </div>
     </main>
     <script src="script.js"></script>
