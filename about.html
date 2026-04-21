@@ -1,7 +1,40 @@
-<main class="container">
-    <h1>Understand Our Planet</h1>
-    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-        <div class="photo-item"><img src="https://image.pollinations.ai/prompt/deep%20green%20forest%20sunlight"></div>
-        <div class="photo-item"><img src="https://image.pollinations.ai/prompt/face%20of%20a%20tiger%20close%20up"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Nature</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-box">🌿 NATURE GUIDE</div>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+
+    <div class="container">
+        <div class="bubbly-border card" style="width: 500px; cursor: pointer;" onclick="startNature()">
+            <img src="understand1.jpg" style="height:auto;">
+            <p style="font-weight:bold; color:#1b4332;">Click Photo for Nature Facts!</p>
+        </div>
+
+        <div id="factBox" class="fact-box">
+            <h3>Nature Facts</h3>
+            <p>Nature isn't just a place, it's a home! Trees provide oxygen, and ecosystems keep our planet balanced. Diversity is the key to a healthy earth.</p>
+        </div>
     </div>
-</main>
+
+    <script>
+        function startNature() {
+            document.getElementById('factBox').style.display = 'block';
+            for(let i=0; i<30; i++) {
+                const e = document.createElement('div');
+                e.className = 'emoji';
+                e.innerText = ['🌿','🍃','🌻','🌲','🌸'][Math.floor(Math.random()*5)];
+                e.style.left = Math.random() * 100 + 'vw';
+                e.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                document.body.appendChild(e);
+            }
+        }
+    </script>
+</body>
+</html>
