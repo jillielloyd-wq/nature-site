@@ -1,8 +1,42 @@
-<main class="container">
-    <h1>Dangerous Wildlife</h1>
-    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-        <div class="photo-item"><img src="https://image.pollinations.ai/prompt/king%20cobra%20snake%20hissing"></div>
-        <div class="photo-item"><img src="https://image.pollinations.ai/prompt/polar%20bear%20on%20ice"></div>
-        <div class="photo-item"><img src="https://image.pollinations.ai/prompt/crocodile%20mouth%20open"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dangerous Wildlife</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-box">🌿 NATURE GUIDE</div>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card bubbly-border"><img src="anger.jpg"></div>
+            <div class="card bubbly-border"><img src="snake.jpg"></div>
+        </div>
+
+        <button class="btn-long" style="width: 250px; margin: 40px auto;" onclick="startDanger()">LEARN MORE</button>
+
+        <div id="dangerFacts" class="fact-box">
+            <h3>Danger Warnings</h3>
+            <p>Be careful! Many creatures use bright colors to warn you they are venomous. Always keep a safe distance from wildlife and never touch plants you don't recognize.</p>
+        </div>
     </div>
-</main>
+
+    <script>
+        function startDanger() {
+            document.getElementById('dangerFacts').style.display = 'block';
+            for(let i=0; i<30; i++) {
+                const e = document.createElement('div');
+                e.className = 'emoji';
+                e.innerText = ['⚠️','🐍','🦂','🚫'][Math.floor(Math.random()*4)];
+                e.style.left = Math.random() * 100 + 'vw';
+                e.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.body.appendChild(e);
+            }
+        }
+    </script>
+</body>
+</html>
