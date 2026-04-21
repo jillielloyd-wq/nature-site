@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dangerous Animals</title>
+    <title>Dangerous Wildlife</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,16 @@
         </ul>
     </nav>
 
-    <main style="max-width: 900px; margin: auto; padding: 40px; text-align: center;">
+    <main class="container">
         <h1>⚠️ Lethal Wildlife</h1>
         <div class="image-container">
             <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1200" alt="Snake">
         </div>
-        <button class="menu-toggle" onclick="checkSurvival()">Get Survival Tip</button>
+        <div class="content-box" style="background: rgba(0,0,0,0.15);">
+            <p>Nature's most dangerous creatures often use venom or camouflage to survive. The Inland Taipan, for example, is the most venomous snake on Earth, but it is incredibly shy and rarely seen by humans.</p>
+            <p>Apex predators like the Grizzly Bear play a vital role in keeping prey populations healthy. Respecting their space is the best way to enjoy nature safely.</p>
+        </div>
+        <button class="menu-toggle" onclick="checkSurvival()" style="margin-top: 20px;">Get Survival Tip</button>
     </main>
     <script src="script.js"></script>
 </body>
