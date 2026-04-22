@@ -8,34 +8,44 @@
 <body>
     <nav class="navbar">
         <div class="logo-box">🌿 NATURE GUIDE</div>
-        <div class="nav-links"><a href="index.html">Home</a></div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu ☰</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Nature</a>
+                <a href="dangerous.html">Dangerous</a>
+                <a href="help.html">Preserve</a>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
-        <div class="grid">
-            <div class="card bubbly-border"><img src="anger.jpg"></div>
-            <div class="card bubbly-border"><img src="snake.jpg"></div>
+        <div class="grid" style="gap: 50px;">
+            <div class="card bubbly-border" style="width: 600px;"><img src="anger.jpg" style="height: 450px;"></div>
+            <div class="card bubbly-border" style="width: 600px;"><img src="snake.jpg" style="height: 450px;"></div>
         </div>
 
-        <button class="btn-long" style="width: 250px; margin: 40px auto;" onclick="startDanger()">LEARN MORE</button>
+        <button class="btn-long" style="width: 400px; margin-top: 60px;" onclick="startDanger()">LEARN MORE ABOUT DANGER</button>
 
         <div id="dangerFacts" class="fact-box">
-            <h3>Danger Warnings</h3>
-            <p>Be careful! Many creatures use bright colors to warn you they are venomous. Always keep a safe distance from wildlife and never touch plants you don't recognize.</p>
+            <h2 style="font-size: 3rem; color: #780000;">Wildlife Warnings ⚠️</h2>
+            <p style="font-size: 1.8rem; line-height: 1.6;">Stay alert! Many dangerous animals use camouflage to hide. Always keep your distance from snakes and never touch unknown plants or berries in the wild.</p>
         </div>
     </div>
 
     <script>
         function startDanger() {
             document.getElementById('dangerFacts').style.display = 'block';
-            for(let i=0; i<30; i++) {
+            for(let i=0; i<50; i++) {
                 const e = document.createElement('div');
                 e.className = 'emoji';
                 e.innerText = ['⚠️','🐍','🦂','🚫'][Math.floor(Math.random()*4)];
                 e.style.left = Math.random() * 100 + 'vw';
                 e.style.animationDuration = (Math.random() * 2 + 2) + 's';
                 document.body.appendChild(e);
+                setTimeout(() => { e.remove(); }, 5000);
             }
+            document.getElementById('dangerFacts').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
