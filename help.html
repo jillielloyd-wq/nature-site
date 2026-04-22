@@ -20,11 +20,10 @@
     </nav>
 
     <div class="container">
-        <div class="bubbly-border card" style="width: 85%; max-width: 1000px;">
-            <img src="persves.jpg" alt="Preserve Nature" style="height: 500px; width: 100%; object-fit: cover;">
-            
-            <div style="padding: 20px;">
-                <h1 style="font-size: 3rem; color: #1b4332;">
+        <div class="bubbly-border card" style="width: 90%; max-width: 1200px;">
+            <img src="persves.jpg" style="height: 650px; width: 100%; object-fit: cover;">
+            <div style="padding: 40px;">
+                <h1 style="font-size: 4rem; color: #1b4332;">
                     How to Preserve Our 
                     <span onclick="startEarth()" style="cursor: pointer; text-decoration: underline; color: #2d6a4f;">World</span> 🌎
                 </h1>
@@ -32,35 +31,27 @@
         </div>
 
         <div id="preserveFacts" class="fact-box">
-            <h2 style="font-size: 2.5rem; color: #1b4332;">Get Involved! 🌎</h2>
-            <div class="bubbly-text" style="font-size: 1.4rem; line-height: 1.6; text-align: left;">
-                <p>🌟 **Reduce, Reuse, Recycle:** Cut down on plastic use to keep our oceans clean.</p>
-                <p>🌳 **Plant a Tree:** Help provide oxygen and homes for birds and squirrels.</p>
-                <p>🚶 **Walk More:** Reduce pollution by walking or biking instead of driving.</p>
-                <p>💧 **Save Water:** Turn off the tap while brushing your teeth!</p>
-            </div>
+            <h2 style="font-size: 3rem;">Get Involved! 🌎</h2>
+            <p style="font-size: 1.8rem; line-height: 1.8; text-align: left;">
+                🌟 <b>Reduce Plastic:</b> Help keep the oceans blue.<br>
+                🌳 <b>Plant Trees:</b> Provide homes for wildlife.<br>
+                🚶 <b>Walk More:</b> Cut down on air pollution.
+            </p>
         </div>
     </div>
 
     <script>
         function startEarth() {
-            // Shows the bubbly facts box
             document.getElementById('preserveFacts').style.display = 'block';
-            
-            // Creates the falling Earth emojis
-            for(let i=0; i<40; i++) {
+            for(let i=0; i<50; i++) {
                 const e = document.createElement('div');
                 e.className = 'emoji';
-                e.innerText = '🌎'; // Earth emojis
+                e.innerText = '🌎';
                 e.style.left = Math.random() * 100 + 'vw';
                 e.style.animationDuration = (Math.random() * 2 + 3) + 's';
                 document.body.appendChild(e);
-                
-                // Remove them after they fall
                 setTimeout(() => { e.remove(); }, 5000);
             }
-            
-            // Smooth scroll to the facts
             document.getElementById('preserveFacts').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
