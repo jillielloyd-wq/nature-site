@@ -6,14 +6,13 @@ body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
     min-height: 100vh;
-    overflow-x: hidden; /* Stops emojis from breaking the page width */
+    overflow-x: hidden;
 }
 
-/* Fixes the Hamburger Dropdown */
 .navbar {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
-    padding: 20px 60px;
+    padding: 25px 80px; /* Wider padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,21 +22,77 @@ body {
 }
 
 .logo-box {
-    border: 3px solid #1b4332;
-    padding: 10px 25px;
-    border-radius: 50px;
+    border: 4px solid #1b4332;
+    padding: 12px 30px;
+    border-radius: 60px;
     background: white;
     font-weight: bold;
+    font-size: 1.4rem; /* Larger logo */
 }
 
+/* Container now takes up more vertical space */
+.container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 80px 40px; 
+    min-height: 90vh; 
+}
+
+.bubbly-border {
+    border: 15px solid white; /* Thicker borders */
+    border-radius: 80px; /* Rounder corners */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    background: white;
+    overflow: hidden;
+}
+
+/* Grid is now wider to spread cards across the screen */
+.grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 60px; 
+    flex-wrap: wrap; 
+    width: 95%; 
+    max-width: 1800px;
+}
+
+/* Cards are significantly larger */
+.card { 
+    width: 500px; 
+    transition: transform 0.4s; 
+}
+
+.card:hover { transform: scale(1.03); }
+
+.card img { 
+    width: 100%; 
+    height: 380px; /* Much taller images */
+    object-fit: cover; 
+}
+
+.btn-long {
+    display: block;
+    background: #1b4332;
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 1.6rem; /* Bigger button text */
+    text-align: center;
+    margin: 25px;
+}
+
+/* Dropdown Menu Styles */
 .dropdown { position: relative; display: inline-block; }
 .dropbtn { 
     background: #1b4332; 
     color: white; 
-    padding: 12px 25px; 
-    font-size: 1.2rem; 
+    padding: 15px 35px; 
+    font-size: 1.4rem; 
     border: none; 
-    border-radius: 30px; 
+    border-radius: 40px; 
     cursor: pointer; 
 }
 .dropdown-content {
@@ -45,71 +100,28 @@ body {
     position: absolute;
     right: 0;
     background-color: white;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    border-radius: 25px;
-    z-index: 1;
+    min-width: 220px;
+    border-radius: 30px;
+    overflow: hidden;
 }
 .dropdown-content a {
     color: #1b4332;
-    padding: 15px 20px;
+    padding: 18px 25px;
     text-decoration: none;
     display: block;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* Fixed Bubbly Borders and Cards */
-.container { display: flex; flex-direction: column; align-items: center; padding: 60px 20px; }
-
-.bubbly-border {
-    border: 12px solid white;
-    border-radius: 60px;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
-    background: white;
-    overflow: hidden;
-}
-
-.grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; width: 95%; }
-
-.card { width: 420px; transition: 0.3s; }
-.card img { width: 100%; height: 300px; object-fit: cover; }
-
-.btn-long {
-    display: block;
-    background: #1b4332;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-align: center;
-    margin: 20px;
-}
-
-/* FIX: The Falling Emojis */
+/* Emoji Animation */
 .emoji {
     position: fixed;
-    top: -50px;
-    font-size: 40px;
+    top: -60px;
+    font-size: 50px;
     z-index: 2000;
-    pointer-events: none; /* Stops them from being clickable */
+    pointer-events: none;
     animation: fall linear forwards;
 }
 
-@keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-}
-
-.fact-box {
-    display: none;
-    margin: 40px auto;
-    padding: 40px;
-    background: white;
-    border: 8px solid #1b4332;
-    border-radius: 50px;
-    max-width: 800px;
-    text-align: center;
-}
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
