@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Preserve Nature | Guide</title>
+    <title>Nature Guide | Preserve</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">🌿 NATURE GUIDE</div>
-        <button id="menuBtn" class="menu-toggle">Show Menu ☰</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Nature</a></li>
-            <li><a href="dangerous.html">Dangerous</a></li>
-            <li><a href="help.html">Preserve</a></li>
-        </ul>
+        <div class="logo-box">🌿 NATURE GUIDE</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu ☰</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="dangerous.html">Dangerous</a>
+                <a href="help.html">Preserve</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="container">
-        <h1>Preserving Our Future</h1>
-        <p>Action is the most important step in protecting our planet.</p>
-
-        <div class="page-gallery">
-            <div class="photo-item"><img src="https://image.pollinations.ai/prompt/volunteer%20planting%20native%20milkweed" alt="Planting Milkweed"></div>
-            <div class="photo-item"><img src="https://image.pollinations.ai/prompt/community%20cleaning%20litter%20from%20a%20trail" alt="Community Cleanup"></div>
-            <div class="photo-item"><img src="https://image.pollinations.ai/prompt/large-scale%20ocean%20clearing%20barrier%20collecting%20plastic" alt="Ocean Clearing"></div>
+    <div class="container">
+        <div class="bubbly-border card" style="width: 85%; max-width: 1000px;">
+            <img src="perves.jpg">
+            
+            <div class="bubbly-text">
+                <h1 style="margin:0;">How to Preserve Our World 🌍</h1>
+            </div>
+            
+            <div class="bubbly-text" style="max-width: 80%; margin-bottom: 40px;">
+                <p style="font-size: 1.2rem; margin:0;">
+                    Preserving nature means protecting our future. We can help by reducing waste, 
+                    planting trees, and respecting wildlife habitats. Small actions lead to big changes!
+                </p>
+            </div>
         </div>
-
-        <div class="content-box">
-            <h3>Community Action</h3>
-            <p>Sustainability isn’t about being perfect; it’s about making consistent better choices. Transition to reusable containers, support local conservation groups, and volunteer for community cleanups. Our local efforts, combined with larger-scale ocean cleaning, are essential to saving coral reefs and marine life!</p>
-        </div>
-    </main>
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
